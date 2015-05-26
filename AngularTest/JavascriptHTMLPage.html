@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</html>
+</head>
+<body>
+    <button id="btn1" value="Click">
+        Click
+    </button>
+    <script>
+        //        function myFunction() {
+        //            carName = "Volvo";
+        //        }
+
+        //        alert(window.carName);
+        //        function clickHere1() {
+        //            this.style.color = "red";
+        //            alert(window.carName);
+        //        }
+
+        //        var element = document.getElementById('btn1');
+        //        element.onclick = clickHere1;
+        //        myFunction();
+
+        //        window.WhoAmI = "I'm the window object";
+
+        //        function Test() {
+
+        //            this.WhoAmI = "I'm the Test object";
+
+        //            this.Check1 = function () {
+        //                alert(this.WhoAmI); // I'm the Test object
+        //            };
+
+        //        }
+
+        //        Test.prototype.Check2 = function () {
+        //            alert(this.WhoAmI); // I'm the Test object
+        //        };
+
+        //        var t = new Test();
+        //        t.Check1();
+        //        t.Check2.apply(this);
+
+        function log1() {
+            console.log.apply(console, arguments);
+        }
+
+        function log2() {
+            console.log(arguments);
+        }
+        log1('Foo', 'çho');
+        log2('Foo', 'çho');
+
+
+        if ("" == 0) {
+            alert("samir true");
+        }
+        if ("" === 0) {
+            alert("wahid");
+        }
+
+        if ([] == 0) {
+            alert("yogesh");
+        }
+        if ([] === 0) {
+            alert("konde");
+        }
+
+        if ([1] == 1) {
+            alert("abc");
+        }
+        if ([1] === 1) {
+            alert("123");
+        }
+
+
+    </script>
+</body>

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html ng-app="myapp">
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="/Scripts/ng-scripts/ngDigestApply.js" type="text/javascript"></script>
+</head>
+<body>
+    <div ng-controller="myController">
+        {{data.time}}
+        <br />
+        <button ng-click="updateTime()">
+            update time - ng-click</button>
+        <button id="updateTimeButton">
+            update time</button>
+    </div>
+</body>
+</html>

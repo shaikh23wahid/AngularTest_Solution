@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript">
+        function Human(name) {
+            this.name = name;
+        }
+
+        Human.prototype.sayHi = function () {
+            console.log("Hi, I am " + this.name);
+        }
+
+        var myDad = new Human("Akhter Shaikh");
+        myDad.sayHi();
+
+
+        function showName(firstName, lastName) {
+            var fullname = '';
+            function makefullname() {
+
+                fullname = "Your full name is " + firstName + " " + lastName;
+                console.log(fullname);
+            }
+
+            return makefullname();
+        }
+        showName("Wahid", "Shaikh");
+        showName("Sanjeev", "Pothu");
+        showName("Samir", "Shah");
+
+        var add = (function () {
+            var counter = 0;
+            return function () {
+                return counter += 1;
+            }
+        })();
+
+        add();
+        add();
+        add();
+
+        var objp = (function () {
+            var private = 0;
+            return {
+                increment: function () { private++; },
+                getValue: function () { return private++; }
+            }
+        })();
+
+        console.log(objp.getValue());
+        console.log(objp.getValue());
+        console.log(objp.getValue());
+
+
+        //As you can see there, a is now an object, with a method publicfunction ( a.publicfunction() ) 
+        //which calls privatefunction, which only exists inside the closure. 
+        //You can NOT call privatefunction directly (i.e. a.privatefunction() ), just publicfunction()
+        a = (function () {
+            var privatefunction = function () {
+                console.log('hello');
+            }
+
+            return {
+                publicfunction: function () {
+                    privatefunction();
+                }
+            }
+        })();
+
+
+        a.publicfunction();
+
+    </script>
+</head>
+<body>
+</body>
+</html>

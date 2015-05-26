@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html ng-app="myModule">
+<head>
+    <title>My Angular App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script>
+        var app = angular.module("myModule", []);
+        app.controller("ctrl1", function ($scope) {
+            $scope.name = "Wahid Shaikh";
+            $scope.counter = 0;
+            $scope.changename = function () {
+                $scope.name = "Samir Shah";
+                $scope.$digest();
+
+                $scope.$apply(function () {
+                    console.log("update time clicked");
+                });
+            }
+
+            $scope.$watch("name", function (newValue, oldValue) {
+                $scope.counter = $scope.counter + 1;
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <div ng-controller="ctrl1">
+        One way binding => name is {{::name}}
+        <br />
+        Two way binding => name is {{name}}<br />
+        <input type="text" ng-model="name" /><br />
+        <input type="button" value="change name" ng-click="changename();" />
+        <br />
+        {{counter}}
+    </div>
+</body>
+</html>

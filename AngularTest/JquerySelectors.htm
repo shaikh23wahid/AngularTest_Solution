@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="/Scripts/jquery-1.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("div.questions > div:first").css("color", "green");
+            $("div.questions > div:nth-child(4)").css("color", "red");
+            $("div.questions > div:last").css("color", "blue");
+         //   $("div.questions > div:even").css("color", "red");
+           // $("div.questions > div:odd").css("color", "green");
+        });    
+    </script>
+</head>
+<body>
+    <div class="questions">
+        <div class="box">
+            Question</div>
+        <div class="box">
+            Question</div>
+        <div class="box">
+            Question</div>
+        <div class="box">
+            Question</div>
+        <div class="box">
+            Question</div>
+        <div class="box">
+            Question</div>
+    </div>
+</body>
+</html>

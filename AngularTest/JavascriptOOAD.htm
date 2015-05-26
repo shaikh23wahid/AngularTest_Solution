@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Object Oriented Javascript</title>
+    <script>
+        //"use strict";
+        // old way of creating object
+        var person = new Object();
+        person.name = 'samir';
+        person.age = 27;
+        person.job = "software engineer";
+
+        person.sayName = function () {
+            console.log(this.name);
+        };
+
+        person.sayName();
+
+        //new way of creating object object literals
+        var person1 = {
+            name: 'ashit',
+            age: 28,
+            job: 'QA',
+            sayName: function () {
+                console.log(this.name);
+            }
+        }
+
+        person1.sayName();
+
+
+        //data properties
+        Object.defineProperty(person, "name", {
+            writable: false,
+            value: 'viral'
+        });
+
+        console.log(person.name);
+
+        person.name = 'vaibhav';
+
+        console.log(person.name);
+
+
+        console.log(person.age);
+        Object.defineProperty(person, "age", {
+            configurable: false
+        });
+        delete person.age;
+        console.log(person.age);
+
+
+        //accessor property
+        var book = {
+            _year: 2004,
+            edition: 1
+        }
+
+        Object.defineProperty(book, "year", {
+            get: function () {
+                return this._year;
+            },
+            set: function (newVal) {
+                if (newVal > 2004) {
+                    this._year = newVal;
+                    this.edition += newVal - 2004;
+                }
+            }
+        });
+
+        book.year = 2005;
+        console.log(book.edition);
+        console.log(book._year);
+
+        var descriptor = Object.getOwnPropertyDescriptor(book, '_year');
+        console.log(descriptor.value); //2004
+        console.log(descriptor.configurable); //false
+        console.log(typeof descriptor.get); //”undefined”
+
+        var descriptor1 = Object.getOwnPropertyDescriptor(book, 'year');
+        console.log(descriptor1.value); //undefi ned
+        console.log(descriptor1.enumerable); //false
+        console.log(typeof descriptor1.get); //”function”
+
+        // here _year is not configurable
+        var book1 = {};
+        Object.defineProperties(book1, {
+            _year: {
+                value: 2004
+            },
+            edition: {
+                value: 1
+            },
+            year: {
+                get: function () {
+                    return this._year;
+                },
+                set: function (newValue) {
+                    if (newValue > 2004) {
+                        this._year = newValue;
+                        this.edition += newValue - 2004;
+                    }
+                }
+            }
+        });
+
+        // here _year is configurable
+        var book2 = {
+            _year: 2004,
+            edition: 1,
+            year: {
+                get: function () {
+                    return this._year;
+                },
+                set: function (newValue) {
+                    if (newValue > 2004) {
+                        this._year = newValue;
+                        this.edition += newValue - 2004;
+                    }
+                }
+            }
+        };
+
+        console.log('from here -----');
+        var descriptor2 = Object.getOwnPropertyDescriptor(book1, '_year');
+        console.log(descriptor2.value); //2004
+        console.log(descriptor2.configurable); //false
+        console.log(typeof descriptor2.get); //”undefi ned”
+
+        var descriptor3 = Object.getOwnPropertyDescriptor(book1, 'year');
+        console.log(descriptor3.value); //undefi ned
+        console.log(descriptor3.enumerable); //false
+        console.log(typeof descriptor3.get); //”function”
+
+        console.log('from here -----');
+        var descriptor4 = Object.getOwnPropertyDescriptor(book2, '_year');
+        console.log(descriptor4.value); //2004
+        console.log(descriptor4.configurable); //false
+        console.log(typeof descriptor4.get); //”undefi ned”
+
+        var descriptor5 = Object.getOwnPropertyDescriptor(book2, 'year');
+        console.log(descriptor5.value); //undefi ned
+        console.log(descriptor5.enumerable); //false
+        console.log(typeof descriptor5.get); //”function”
+
+        function Person(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+
+            this.sayName = function () {
+                console.log('constructor pattern : ' + this.name);
+            }
+        }
+
+        //Person objec to avoid function duplication
+        function NewPerson(name, age, job) {
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayName = sayName;
+        }
+
+        function sayName() {
+            console.log(this.name);
+        }
+
+        function createPerson(name, age, job) {
+            var obj = new Person();
+            obj.name = name;
+            obj.age = age;
+            obj.job = job;
+
+            obj.sayName = function () {
+                console.log('factory pattern : ' + this.name);
+            }
+            return obj;
+        }
+
+        var samir = createPerson('Samir Shah', 27, 'Software Engineer');
+        var sam = new Person('Sam', 22, 'Software Engineer');
+        var vir = new Person('Vir', 22, 'Electrical Engineer');
+
+        var ash = new NewPerson('ash', 28, 'Engineer');
+        var vai = new NewPerson('vai', 28, 'Business');
+
+        samir.sayName();
+        sam.sayName();
+
+        console.log(samir instanceof Object);
+        console.log(sam instanceof Object);
+        console.log(samir instanceof Person);
+        console.log(sam instanceof Person);
+
+        console.log('check constructor patterns loop holes');
+        console.log(sam instanceof Object);
+        console.log(sam instanceof Person);
+        console.log(vir instanceof Object);
+        console.log(vir instanceof Person);
+
+        console.log('/////////////////////////////');
+        console.log(sam == vir);
+        console.log(sam.sayName == vir.sayName);
+
+        console.log(ash == vai);
+        console.log(ash.sayName == vai.sayName);
+
+        function Person3() {
+        }
+        Person3.prototype.name = 'Nicholas';
+        Person3.prototype.age = 29;
+        Person3.prototype.job = 'Software Engineer';
+        Person3.prototype.sayName = function () {
+            console.log(this.name);
+        };
+        var person11 = new Person3();
+        person11.sayName(); //”Nicholas”
+        var person12 = new Person3();
+        person12.sayName(); //”Nicholas”
+
+        console.log(person11.sayName == person12.sayName); //true
+
+        var per = {
+            kind: 'person'
+        };
+
+        var zack = Object.create(per, { age: { value: 13} });
+        console.log(zack.age); // => ‘13’
+        console.log(per.age);
+
+        console.log(zack.kind); // => ‘person’
+        console.log(per.kind);
+
+        function P(name) {
+            this.name = name;
+        }
+
+        var z = new P('shh');
+        //z.kind = 'z kind person';
+        console.log(z.kind);
+        P.prototype.kind = 'kind person';
+        console.log(z.kind);
+    </script>
+</head>
+<body>
+</body>
+</html>

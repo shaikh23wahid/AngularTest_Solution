@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="/Scripts/angular.min.js" type="text/javascript"></script>
+    <script src="Scripts/ng-scripts/ngApp.js" type="text/javascript"></script>
+    <script src="Scripts/ng-scripts/ngService.js" type="text/javascript"></script>
+    <script src="Scripts/ng-scripts/ngController.js" type="text/javascript"></script>
+    <script src="Scripts/ng-scripts/ngDirectives.js" type="text/javascript"></script>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <my-div>This div will be replaced</my-div>
+    <input type="text" ng-model="user.firstName" />
+    <!--  <div>
+        Hello, {{user.firstName}}!</div>-->
+    <div>
+        Hello, <span ng-bind="user.firstName"></span>
+    </div>
+    <div ng-repeat="user in users | filter:user">
+        <!--<div my-shared-scope>
+        </div>-->
+        <span ng-bind="user.firstName"></span>
+        <!--{{user.firstName}}&nbsp; {{user.lastName}} - Age: {{user.age}}-->
+    </div>
+    <!--<hr />
+    <div ng-repeat="user1 in users1">
+        {{user1.firstName}}&nbsp; {{user1.lastName}}
+    </div>
+    <button ng-click="changeFirstUsersFirstName()">
+        Change Name</button>-->
+</body>
+</html>

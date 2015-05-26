@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html ng-app="shoppingcart">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <style type="text/css">
+        .panel
+        {
+            width: 70%;
+            margin: 30px auto;
+        }
+    </style>
+</head>
+<body ng-controller="MainCtrl">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Shopping Cart</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form">
+            <div class="form-group">
+                <label for="eml">
+                    Quantity</label>
+                <input id="qty" type="text" class="form-control" placeholder="Quantity" ng-model="quantity">
+            </div>
+            <div class="form-group">
+                <label for="pwd">
+                    Rate</label>
+                <input id="rate" type="text" class="form-control" placeholder="Rate" ng-model="rate">
+            </div>
+            <div class="form-group">
+                <label for="pwd">
+                    Dscount Amount
+                </label>
+                <input id="discount" type="text" class="form-control" placeholder="Discount" ng-model="discount">
+            </div>
+            <div class="form-group">
+                <label for="pwd">
+                    Total</label>
+                {{TotalAmount}}
+            </div>
+            <button type="submit" class="btn btn-default">
+                Calculate</button>
+            </form>
+        </div>
+    </div>
+    <script src="/Scripts/ng-scripts/ngShoppingCart.js"></script>
+</body>
+</html>

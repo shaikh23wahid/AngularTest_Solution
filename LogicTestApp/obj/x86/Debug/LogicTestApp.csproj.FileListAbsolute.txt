@@ -1,0 +1,5 @@
+C:\Wahid\AngularTest\LogicTestApp\bin\Debug\LogicTestApp.exe
+C:\Wahid\AngularTest\LogicTestApp\bin\Debug\LogicTestApp.pdb
+C:\Wahid\AngularTest\LogicTestApp\obj\x86\Debug\LogicTestApp.exe
+C:\Wahid\AngularTest\LogicTestApp\obj\x86\Debug\LogicTestApp.pdb
+C:\Wahid\AngularTest\LogicTestApp\obj\x86\Debug\LogicTestApp.csprojResolveAssemblyReference.cache

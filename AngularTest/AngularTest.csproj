@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E47FCE5C-B3F0-4E14-BF7D-4000D1420F04}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AngularTest</RootNamespace>
+    <AssemblyName>AngularTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="%24compile.htm" />
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="AlternativeApproachToControllers.htm" />
+    <Content Include="ANG.htm" />
+    <Content Include="Angular1.htm" />
+    <Content Include="AngularDirective1.htm" />
+    <Content Include="AngularLink.htm" />
+    <Content Include="AngularPromise.htm" />
+    <Content Include="AngularTest.htm" />
+    <Content Include="AngularWithPaython.htm" />
+    <Content Include="app.htm" />
+    <Content Include="app1.htm" />
+    <Content Include="CharacterLength.htm" />
+    <Content Include="Chart.htm" />
+    <Content Include="ClouserExample.htm" />
+    <Content Include="DependencyInjectionTutorial.htm" />
+    <Content Include="DigestCycleAndApply.htm" />
+    <Content Include="customer.htm" />
+    <Content Include="DirectiveBehavior.htm" />
+    <Content Include="DirectiveCommunication.htm" />
+    <Content Include="DirectiveRestrict.htm" />
+    <Content Include="DirectiveTalkingToController.htm" />
+    <Content Include="FactoryServiceProvider.htm" />
+    <Content Include="FunctionalScope.htm" />
+    <Content Include="GroupDirective.htm" />
+    <Content Include="InheritanceInJavascript.htm" />
+    <Content Include="IsolateScope _%40.htm" />
+    <Content Include="IsolateScope _=.htm" />
+    <Content Include="IsolateScopeReview.htm" />
+    <Content Include="IsolateScope_AND.htm" />
+    <Content Include="IsolationInAngular.htm" />
+    <Content Include="JavascriptHTMLPage.html" />
+    <Content Include="JavascriptOOAD.htm" />
+    <Content Include="JavascriptTest.htm" />
+    <Content Include="JQUERYAnimate.htm" />
+    <Content Include="JquerySelectors.htm" />
+    <Content Include="MultipleNGAPP.htm" />
+    <Content Include="my-customer-iso.htm" />
+    <Content Include="NGView.htm" />
+    <Content Include="NGViewTest.htm" />
+    <Content Include="OneWayBinding.htm" />
+    <Content Include="PassDataBetweenController.htm" />
+    <Content Include="Promise1.htm" />
+    <Content Include="scopeexample.htm" />
+    <Content Include="ScopeIsolationTestExample.htm" />
+    <Content Include="ScopeWatch.htm" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\Contrller.js" />
+    <Content Include="Scripts\DirectiveComm.js" />
+    <Content Include="Scripts\DirectiveContrller1.js" />
+    <Content Include="Scripts\GroupDirective.js" />
+    <Content Include="Scripts\IsolationDir.js" />
+    <Content Include="Scripts\jqfade.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.maxlength.js" />
+    <Content Include="Scripts\jquery.plugin.js" />
+    <Content Include="Scripts\Main.js" />
+    <Content Include="Scripts\ng-scripts\ng-FunctionScope.js" />
+    <Content Include="Scripts\ng-scripts\ng-promise.js" />
+    <Content Include="Scripts\ng-scripts\ngAlternativeApproachToControllers.js" />
+    <Content Include="Scripts\ng-scripts\ngApp.js" />
+    <Content Include="Scripts\ng-scripts\ngBehavior.js" />
+    <Content Include="Scripts\ng-scripts\ngController.js" />
+    <Content Include="Scripts\ng-scripts\ngDependencyInjection.js" />
+    <Content Include="Scripts\ng-scripts\ngDigestApply.js" />
+    <Content Include="Scripts\ng-scripts\ngDirectives.js" />
+    <Content Include="Scripts\ng-scripts\ngDirectiveTalkingToController.js" />
+    <Content Include="Scripts\ng-scripts\ngFactoryServiceProvider.js" />
+    <Content Include="Scripts\ng-scripts\ngIsolateScopeReview.js" />
+    <Content Include="Scripts\ng-scripts\ngIsolateScope_%40.js" />
+    <Content Include="Scripts\ng-scripts\ngIsolateScope_=.js" />
+    <Content Include="Scripts\ng-scripts\ngIsolateScope_AND.js" />
+    <Content Include="Scripts\ng-scripts\ngMain.js" />
+    <Content Include="Scripts\ng-scripts\ngScopeIsolationTestExample.js" />
+    <Content Include="Scripts\ng-scripts\ngService.js" />
+    <Content Include="Scripts\ng-scripts\ngShoppingCart.js" />
+    <Content Include="Scripts\ng-scripts\ngThinkingDifferentlyAboutOrganization.js" />
+    <Content Include="Scripts\ng-scripts\ngViewTest.js" />
+    <Content Include="Scripts\ng-scripts\ngWatch.js" />
+    <Content Include="Scripts\ngExample.js" />
+    <Content Include="Scripts\NGView.js" />
+    <Content Include="Scripts\TransculudeAngular.js" />
+    <Content Include="ServiceVSFactory.htm" />
+    <Content Include="ShareDataInDirective.htm" />
+    <Content Include="ShoppingCart.htm" />
+    <Content Include="Styles\foundation-min.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="ThinkingDifferentlyAboutOrganization.htm" />
+    <Content Include="TransculationInAngular.htm" />
+    <Content Include="Tutorial.htm" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53897</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

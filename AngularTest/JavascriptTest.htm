@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        if ("" == 0) {
+            console.log("value equal");
+        }
+
+        if ("" === 0) {
+            console.log("type equal");
+        }
+
+
+        if ([] == 0) {
+            console.log("array equal");
+        }
+
+        if ([] === 0) {
+            console.log("array type equal");
+        }
+
+        if (parseInt([1]) == 0) {
+            console.log("array equal");
+        }
+
+        if (parseInt([1]) === 0) {
+            console.log("array type equal");
+        }
+        if (null == undefined) {
+            console.log("null undefined  equal");
+        }
+
+        if (null === undefined) {
+            console.log("null undefined type equal");
+        }
+
+        var a = {};
+        var b = {};
+        var c = a;
+
+        if (a == b) {
+            console.log("array type equal");
+        }
+        if (a === b) {
+            console.log("array type equal");
+        }
+
+        if (a == c) {
+            console.log("a == c");
+        }
+
+        if (a === c) {
+            console.log("a === c");
+        }
+    </script>
+</body>
+</html>

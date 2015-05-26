@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W<3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="linkApp">
+<head>
+    <title>Link & Pre-Link Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.min.js"></script>
+    <script>
+        var linkApp = angular.module("linkApp", []);
+
+        linkApp.directive('dad', function () {
+            return {
+                restrict: "AE",
+                template: "<div class='dad'>{{greeting}} {{name}}</div><son></son>",
+                link:
+                {
+                    pre: function (scope, element, attrs) {
+                        scope.name = 'Wahid';
+                        scope.greeting = 'Hey, I am ';
+                    }
+                }
+            }
+        });
+
+        linkApp.directive("son", function () {
+            return {
+                restrict: "AE",
+                template: '<div class="son">{{sonname}} {{sonSays}}</div>',
+                link: function (scope, element, attrs) {
+                    scope.sonname = "Farhan";
+                    scope.sonSays = 'Hey, I am son, and my dad is ' + scope.name;
+                }
+            }
+        })
+    </script>
+    <style type="text/css">
+        .dad
+        {
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+        .son
+        {
+            padding: 10px;
+            margin: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <dad></dad>
+</body>
+</html>

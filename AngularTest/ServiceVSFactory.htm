@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myModule">
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("myModule", []);
+
+        app.factory("myfactory", function () {
+
+            var serviceObj = {};
+
+            serviceObj.method1 = function () {
+                return 5;
+            }
+
+            serviceObj.method2 = function () {
+                return 50;
+            }
+
+            return serviceObj;
+        });
+
+
+        app.service("myService", function () {
+            this.method1 = function () {
+                return 5;
+            }
+
+            this.method2 = function () {
+                return 50;
+            }
+        });
+
+        app.controller("myController", function ($scope, myfactory, myService) {
+            // var obj1myfactory = new myfactory();
+            $scope.data = myfactory.method1();
+
+
+            $scope.data1 = myService.method1();
+
+        });
+
+    </script>
+</head>
+<body ng-controller="myController">
+    factorydata : {{data}}
+    <br />
+    servicedata : {{data1}}
+</body>
+</html>

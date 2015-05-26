@@ -1,0 +1,136 @@
+﻿<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/Main.js"></script>
+</head>
+<body>
+    <div ng-app="superhero">
+        <div ng-controller="ThirdCtrl">
+            <superman></superman>
+        </div>
+    </div>
+    <div ng-app="myApp">
+        <div ng-controller="FirstCtrl">
+            <input type="text" ng-model="searchText" />
+            <ul ng-repeat="a in Products| filter:searchText">
+                <li>{{a.name}} - {{a.ingredients}}</li></ul>
+        </div>
+        <!--
+        <div ng-controller="SecondCtrl">
+            <input type="text" ng-model="data.Products" />
+            <h1>
+                {{data.Products | limitTo:2}}</h1>
+        </div> 
+    </div>
+</body>
+</html>
+-->
+<html>
+<head>
+    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body>
+    <div id="App1" ng-app="shoppingCart" ng-controller="ShoppingCartController">
+        <h1>
+            Your order</h1>
+        <div ng-repeat="item in items">
+            <span>{{item.product_name}}</span> <span>{{item.price | currency}}</span>
+            <button ng-click="remove($index);">
+                Remove</button>
+        </div>
+    </div>
+    <div id="App2" ng-app="namesList" ng-controller="NamesController">
+        <h1>
+            List of Names</h1>
+        <div ng-repeat="_name in names">
+            <p>
+                {{_name.username}}</p>
+        </div>
+    </div>
+    <input type="text" id="txt" name="txt" value="" />
+    <button id="btn1" value="Click">
+        Click
+    </button>
+    <script>
+
+        function myFunction() {
+            carName = "Volvo";
+        }
+
+        function clickHere(obj) {
+            obj.style.color = "red";
+        }
+
+        name = "xyz";
+
+        function clickHere1() {
+            this.style.color = "red";
+            alert(carName);
+        }
+
+        var element = document.getElementById('btn1');
+        element.onclick = clickHere1;
+
+
+        //        if (undefined === null) {
+        //            alert(true);
+        //        } else {
+        //            alert(false);
+        //        }
+
+        var shoppingCartModule = angular.module("shoppingCart", [])
+
+        shoppingCartModule.controller("ShoppingCartController",
+                function ($scope) {
+                    $scope.items = [
+                        { product_name: "Product 1", price: 50 },
+                        { product_name: "Product 2", price: 20 },
+                        { product_name: "Product 3", price: 180 }
+                    ];
+                    $scope.remove = function (index) {
+                        $scope.items.splice(index, 1);
+                    }
+                }
+            );
+
+        var namesModule = angular.module("namesList", [])
+        namesModule.controller("NamesController",
+                function ($scope) {
+                    $scope.names = [
+                        { username: "Nitin" },
+                        { username: "Mukesh" }
+                    ];
+                }
+            );
+        angular.bootstrap(document.getElementById("App2"), ['namesList']);
+
+        jQuery(document).ready(function () {
+//            for (var a = 0; a < 3; a++) {
+//                //                setTimeout(
+//                //                      console.log(a), 10000);
+
+//                //setTimeout(function () { alert("Hello " + a); }, 1000);
+//                setTimeout(function (k) { console.log(k) } (a), 10000);
+//            }
+
+            for (var i = 1; i <= 3; i++) {
+                (function (index) {
+                    setTimeout(function () { alert(index); }, i * 1000);
+                })(i);
+            }
+
+            var x = document.getElementById("txt");
+            setTimeout(function () { x.value = "2 seconds" }, 2000);
+            setTimeout(function () { x.value = "4 seconds" }, 4000);
+            setTimeout(function () { x.value = "6 seconds" }, 6000);
+
+            setInterval(function () { x.value = "2 seconds" }, 2000);
+            setInterval(function () { x.value = "4 seconds" }, 4000);
+            setInterval(function () { x.value = "6 seconds" }, 6000);
+        });
+                
+    </script>
+</body>
+</html>

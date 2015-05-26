@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/angular.min.js"></script>
+</head>
+<body ng-app="">
+    <div>
+        <p>
+            My first expression: {{ 5 + 5 }}</p>
+    </div>
+    <div ng-init="quantity=1;cost=5">
+        <p>
+            Total in dollar: {{ quantity * cost }}</p>
+    </div>
+    <div ng-init="quantity=1;price=5">
+        Quantity:
+        <input type="number" ng-model="quantity">
+        Costs:
+        <input type="number" ng-model="price">
+        Total in dollar: {{ quantity * price }}
+    </div>
+</body>
+</html>

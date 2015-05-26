@@ -1,0 +1,33 @@
+﻿<html ng-app="app">
+<head>
+    <title>pass data between controllers</title>
+</head>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<body>
+    <div ng-controller="FirstCtrl as first">
+        <input type="text" ng-model="first.greeting.message"><br />
+        {{ first.greeting.message }} World
+    </div>
+    <div ng-controller="SecondCtrl as second">
+        {{ second.greeting.message }} in Second
+    </div>
+</body>
+<script>
+    var myapp = angular.module('app', [])
+    myapp.service('greeting', function Greeting() {
+        var greeting = this;
+        greeting.message = 'Default';
+    });
+
+    myapp.controller('FirstCtrl', function FirstCtrl(greeting) {
+        var first = this;
+        first.greeting = greeting;
+    });
+
+    myapp.controller('SecondCtrl', function SecondCtrl(greeting) {
+        var second = this;
+        second.greeting = greeting;
+    });
+     
+</script>
+</html>

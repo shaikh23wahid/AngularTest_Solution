@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <style>
+        div#expander
+        {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+    <script> 
+
+    $( "#expander" ).animate({
+    width: "200px",
+    height: "200px",
+  },3000);
+    </script>
+    <script>
+
+
+        function add(x, y) {
+            return x + y + 10;
+        }
+
+        alert(add(10));
+        alert(add(10, 5)); 
+    </script>
+</head>
+<body>
+    <div id="expander">
+    </div>
+</body>
+</html>

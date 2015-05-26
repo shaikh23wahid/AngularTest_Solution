@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="mysharedataapp">
+<head>
+    <script src="/Scripts/angular.min.js"></script>
+    <script>
+        var sharedataapp = angular.module("mysharedataapp", []);
+
+        sharedataapp.controller("sharedcontroller", function ($scope) {
+            $scope.customename = "Wahid Akhter Shaikh";
+
+            $scope.changename = function (value) {
+                $scope.customename = value;
+            };
+        });
+
+
+        sharedataapp.directive("dir1", function () {
+            return {
+                restrict: "A",
+                scope: {
+                    callmethod: "&"
+                },
+                template: '<input type="text" ng-model="value"><div class="button" ng-click="callmethod({message:value})">Call home!</div>',
+                link: function (scope, element, atrs) {
+                    console.log(scope);
+                    console.log(element);
+                    console.log(atrs);
+                    scope.$parent.changename("Farhan Shaikh");
+                }
+            }
+        });
+
+    
+    </script>
+</head>
+<body ng-controller="sharedcontroller">
+    <div dir1 callmethod="changename(message)">
+    </div>
+    Controller Scope value changed : {{customename}}
+</body>
+</html>

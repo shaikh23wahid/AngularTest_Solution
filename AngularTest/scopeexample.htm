@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var ngapp = angular.module("myApp", []);
+        ngapp.controller("myController", function ($scope) {
+            $scope.message = "Hello Wahid";
+            console.log($scope);
+            console.log($scope.message);
+        });
+
+        ngapp.directive("dir1", function () {
+            return {
+                link: function (scope, element, attr) {
+                    console.log(scope);
+                   // scope.message = "Hi Samir";
+                    console.log(scope.message);
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="myController">
+    <div dir1>
+    </div>
+</body>
+</html>
