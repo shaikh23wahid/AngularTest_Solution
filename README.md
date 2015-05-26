@@ -1,2 +1,0 @@
-# AngularTest_Solution
-AngularTest_Solution
